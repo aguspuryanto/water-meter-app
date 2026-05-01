@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { wargaApi } from '../services/api'
+import { WARGA_SEED_DATA } from '../types'
 
 export default function Warga() {
   const queryClient = useQueryClient()
@@ -15,31 +16,7 @@ export default function Warga() {
       }
       
       // Then insert new data
-      const wargas = [
-        { blok: 'B01', nama: 'P. Pras/Katim' },
-        { blok: 'B02', nama: 'P. Richard' },
-        { blok: 'B03', nama: 'P. Farid' },
-        { blok: 'B05', nama: 'P. P. Yoyok' },
-        { blok: 'B07', nama: 'P. Hendra' },
-        { blok: 'B08', nama: 'P. Agus' },
-        { blok: 'B09', nama: 'P. Rizky' },
-        { blok: 'B10', nama: 'P. Junaidi' },
-        { blok: 'B11', nama: 'P. Hendrawan' },
-        { blok: 'B12', nama: 'P. Daud' },
-        { blok: 'B14', nama: 'P. Joko' },
-        { blok: 'B15', nama: 'P. Dedi' },
-        { blok: 'B16', nama: 'P. Bendra' },
-        { blok: 'B17', nama: 'P. Andik' },
-        { blok: 'B20', nama: 'P. Wito' },
-        { blok: 'B21', nama: 'P. Endro' },
-        { blok: 'B22', nama: 'P. Andre' },
-        { blok: 'B23', nama: 'P. Robby' },
-        { blok: 'B24', nama: 'P. Gita' },
-        { blok: 'B25', nama: 'P. Andri' },
-        { blok: 'B26', nama: 'P. Sunari' },
-        { blok: 'B28', nama: 'P. Eko' },
-      ]
-      return await wargaApi.createMany(wargas)
+      return await wargaApi.createMany(WARGA_SEED_DATA)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['warga'] })
