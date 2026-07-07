@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import Warga from './pages/Warga'
 import CatatMeter from './pages/CatatMeter'
 import Riwayat from './pages/Riwayat'
+import Laporan from './pages/Laporan'
 import BottomNav from './components/BottomNav'
 
 function AppContent() {
@@ -17,6 +18,7 @@ function AppContent() {
         <Route path="/warga" element={<Warga />} />
         <Route path="/catat" element={<CatatMeter />} />
         <Route path="/riwayat" element={<Riwayat />} />
+        <Route path="/laporan" element={<Laporan />} />
       </Routes>
       <BottomNav />
     </div>

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { Home, Users, PenSquare, History } from 'lucide-react'
+import { Home, Users, PenSquare, History, MessageCircle } from 'lucide-react'
 
 export default function BottomNav() {
   const navItems = [
@@ -7,6 +7,7 @@ export default function BottomNav() {
     { to: '/warga', icon: Users, label: 'Warga' },
     { to: '/catat', icon: PenSquare, label: 'Catat' },
     { to: '/riwayat', icon: History, label: 'Riwayat' },
+    { to: '/laporan', icon: MessageCircle, label: 'Laporan' },
   ]
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2">
